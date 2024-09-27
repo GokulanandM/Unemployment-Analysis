@@ -15,7 +15,7 @@ from sklearn.metrics import silhouette_score
 from scipy.cluster.hierarchy import dendrogram, linkage
 
 # Load the dataset
-file_path = r"C:\Users\srikr\Desktop\COLLEGE\Sem 4\Predictive analysis\PA Project\unemployment analysis.xlsx"
+file_path = "unemployment analysis.xlsx"
 df = pd.read_excel(file_path)
 
 # Convert all column names to strings
@@ -176,13 +176,13 @@ if nav == "Dashboard":
 # Dataset page
 elif nav == "Dataset":
     st.markdown("<h1 style='text-align: center; color: #4285F4;'>📊 Dataset</h1>", unsafe_allow_html=True)
-    st.image("C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\main.png", caption="Travel Agent", use_column_width=True)
+    st.image("main.png", caption="Travel Agent", use_column_width=True)
     st.write(df)
 
 # Summary Statistics page
 elif nav == "Summary Statistics":
     st.markdown("<h1 style='text-align: center; color: #DB4437;'>📈 Summary Statistics</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\desc.png", caption="Descriptive Statistics", use_column_width=True)
+    st.image("desc.png", caption="Descriptive Statistics", use_column_width=True)
     st.write(df.describe())
 
     # Get numeric columns
@@ -224,7 +224,7 @@ elif nav == "Missing Data":
 # Correlation page
 elif nav == "Correlation":
     st.markdown("<h1 style='text-align: center; color: #0F9D58;'>🔗 Correlation</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\corr.jpg", caption="Correlation", use_column_width=True)
+    st.image("corr.jpg", caption="Correlation", use_column_width=True)
     corr_matrix = df.corr()
     fig, ax = plt.subplots(figsize=(12, 8))
     sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f", ax=ax)
@@ -233,7 +233,7 @@ elif nav == "Correlation":
 # SVM Model page
 elif nav == "SVM Model":
     st.markdown("<h1 style='text-align: center; color: #4285F4;'>🤖 SVM Model</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\svm.jpg", caption="SVM Model", use_column_width=True)
+    st.image("svm.jpg", caption="SVM Model", use_column_width=True)
     X = df.drop("Country Code", axis=1)
     y = df["Country Code"]
     scaler = StandardScaler()
@@ -245,7 +245,7 @@ elif nav == "SVM Model":
 # Regression page
 elif nav == "Regression":
     st.markdown("<h1 style='text-align: center; color: #DB4437;'>📈 Regression</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\reg.jpg", caption="Regression", use_column_width=True)
+    st.image("reg.jpg", caption="Regression", use_column_width=True)
 
     # Prepare data for regression
     years = df.columns[1:].astype(int).values.reshape(-1, 1)
@@ -294,7 +294,7 @@ elif nav == "Chi-square Test":
 # Factor Analysis page
 elif nav == "Factor Analysis":
     st.markdown("<h1 style='text-align: center; color: #FF6F61;'>📊 Factor Analysis</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\fac.png", caption="Factor Analysis", use_column_width=True)
+    st.image("fac.png", caption="Factor Analysis", use_column_width=True)
     # Prepare the data
     X_fa = df.drop("Country Code", axis=1)
     
@@ -340,7 +340,7 @@ elif nav == "PCA Visualization":
 # Hierarchical Clustering page
 elif nav == "Hierarchical Clustering":
     st.markdown("<h1 style='text-align: center; color: #4285F4;'>🌳 Hierarchical Clustering</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\clus.png", caption="Clustering", use_column_width=True)
+    st.image("clus.png", caption="Clustering", use_column_width=True)
     # Prepare the data
     X_scaled = StandardScaler().fit_transform(df.drop("Country Code", axis=1))
     
@@ -358,7 +358,7 @@ elif nav == "Hierarchical Clustering":
 # Agglomerative Clustering page
 elif nav == "Agglomerative Clustering":
     st.markdown("<h1 style='text-align: center; color: #0F9D58;'>🔳 Agglomerative Clustering</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\clus.png", caption="Clustering", use_column_width=True)
+    st.image("clus.png", caption="Clustering", use_column_width=True)
     # Prepare the data
     X_scaled = StandardScaler().fit_transform(df.drop("Country Code", axis=1))
     
@@ -384,7 +384,7 @@ elif nav == "Agglomerative Clustering":
 # KMeans Clustering page
 elif nav == "KMeans Clustering":
     st.markdown("<h1 style='text-align: center; color: #4285F4;'>📍 KMeans Clustering</h1>", unsafe_allow_html=True)
-    st.image(r"C:\\Users\\srikr\\Desktop\\COLLEGE\\Sem 4\\Predictive analysis\\PA Project\\clus.png", caption="Clustering", use_column_width=True)
+    st.image("clus.png", caption="Clustering", use_column_width=True)
     # Prepare the data
     X_scaled = StandardScaler().fit_transform(df.drop("Country Code", axis=1))
     
